@@ -1,0 +1,263 @@
+.contentInfo{
+    width: 1500px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style: none;
+}
+
+.headInfo{
+    height: 350px;
+    margin: 2.5% 2.5% !important;
+    border:2px solid grey;
+    position: relative;
+    background: dimgrey;
+    /*background-size: 1500px auto;*/
+    /*margin-left: 2% ;*/
+}
+
+.leftInfo{
+    margin: 0 auto;
+    /*height: 1000px;*/
+    /*border:2px solid grey;*/
+    position: relative;
+
+}
+
+.rightInfo{
+    /*height: 1000px;*/
+    /*border:2px solid grey;*/
+    position: relative;
+
+}
+
+
+
+.headPhoto{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.headPhoto > img{
+    height: 200px;
+    width: 200px;
+    border: 10px solid wheat;
+}
+
+.headName{
+    position: absolute;
+    bottom: 35px;
+    left: 285px;
+    color: lightgoldenrodyellow;
+    font-family: 微软雅黑, fantasy;
+    font-size: 60px;
+}
+
+.left.leftIntro{
+    border:2px solid grey;
+    margin-bottom: 37px;
+    background-color: white;
+    font-family: "微软雅黑 Light", sans-serif, Roboto, Arial;
+    padding: 50px;
+}
+
+.introDes{
+    border-bottom: 1px solid lightgrey;
+}
+.introDes>span{
+    font-family: 微软雅黑, fantasy;
+    font-size: 36px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+
+
+
+.introDetail{
+    /*font-family:æ–°å®‹ä½“,sans-serif, Roboto, Arial;*/
+    font-family: "微软雅黑 Light", fantasy;
+    font-size: 25px;
+    margin: 20px auto;
+}
+
+.introHeadline{
+    font-size: 20px;
+    margin: 20px auto;
+    line-height: 28px;
+
+}
+
+.introPos > span{
+    font-size: 17px;
+    font-family: sans-serif, Roboto, Arial;
+    margin-left: 7px;
+}
+
+.fa-user-circle{
+    color: lightseagreen;
+}
+
+.fa-map-marker{
+    color:cadetblue;
+}
+
+.fa-users{
+    color: deeppink;
+}
+
+.fa-users.friend{
+    color: deepskyblue;
+}
+.fa-thumbs-o-up{
+    color: #ff0a09;
+}
+
+
+
+.left{
+    border:2px solid grey;
+    margin-bottom: 37px;
+    background-color: white;
+    font-family: "微软雅黑 Light", sans-serif, Roboto, Arial;
+    padding: 18px 50px;
+}
+
+.left-des>span{
+    font-family: "微软雅黑", fantasy;
+    font-size: 36px;
+    display: block;
+    margin: 20px auto;
+}
+
+.fa-plus{
+    float: right;
+    color: lightpink;
+}
+
+.left-des:hover .fa-plus{
+    cursor: pointer;
+    color: darkgrey;
+}
+
+
+
+.rightPost{
+    border:2px solid grey;
+    margin-bottom: 20px;
+    background-color: white;
+    font-family: "微软雅黑 Light", sans-serif, Roboto, Arial;
+    padding: 20px;
+}
+
+.postDes{
+    margin-bottom: 20px;
+    /* height: 95px; */
+    border-bottom: 1px solid lightgrey;
+}
+
+.postDes {}
+
+
+.postDes>img{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px !important;
+    float:  left;
+    margin-top: 20px;
+}
+
+.postInfo{
+    float: left;
+    /* height: 80px; */
+    margin-left: 20px;
+    /*line-height: 4px;*/
+    width: 75%;
+    overflow:  hidden;
+    margin-bottom: 10px;
+}
+
+.postName{
+    font-family: "微软雅黑", fantasy;
+    font-size: 35px;
+    display: block;
+    margin: 18px auto;
+    line-height: 44px;
+}
+
+.postTime{
+    font-family: "微软雅黑 Light", "Arial Rounded MT Bold";
+    font-size: 20px;
+    /* display: block; */
+    /* margin: 0px; */
+    color: dimgrey;
+}
+
+.fa-globe{
+    color: steelblue;
+    font-size: 20px;
+}
+
+.postText{
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.postText > p{
+    font-size: 25px;
+    line-height: 30px;
+    font-family: 黑体,sans-serif, Roboto, Arial;
+}
+
+.postPicUl {
+    list-style: none;
+    margin: 0;
+}
+
+.postPic{
+    margin-bottom: 20px;
+}
+
+.img_friends{
+    width: 100px;
+    height: 100px;
+}
+
+.p_name{
+    font-size: 25px;
+    text-align:  center;
+    margin: 10px;
+}
+
+.ul_friends{
+    list-style: none;
+    font-family: "微软雅黑 Light", fantasy;
+}
+
+.ul_friends >li{
+    display: inline-block;
+    margin: 5px 7px;
+}
+
+.span-count{
+    display: contents!important;
+}
+
+.span-key-info,.span-val-info{
+    display: block;
+    width: auto !important;
+}
+
+
+.div-per-info:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+.div-per-info {
+    zoom: 1
+}

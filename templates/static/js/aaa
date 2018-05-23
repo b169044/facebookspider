@@ -1,0 +1,114 @@
+$("#test1").on("click",function(){
+//    var ajax = $.ajax({
+//        url:'/data',
+//        type:'GET',
+//        dataType:'json',
+//        success:function(data){
+//            if(data){
+//                alert(data);
+//            }else{
+//                alert("2");
+//            }
+//        },
+//        error:function(){
+//            alert("error!!")
+//        }
+//    })
+
+//    $.get("/data",function(data){
+//        console.log(data);
+//    })
+
+	function sendAjax(){
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			console.log(xmlhttp.responseText);
+			var result = JSON.parse(xmlhttp.responseText);
+			console.log(result);
+//            alert(result["friends"]);
+            try{
+            document.getElementById("location").innerHTML =result["location"];
+            }
+            catch(e){
+            alert("error");
+            }
+            try{
+            document.getElementById("counts").innerHTML =result["count"];
+            }
+            catch(e){
+            alert("error");
+            }
+            try{
+            document.getElementById("friends").innerHTML =result["friends"];
+            }
+            catch(e){
+            alert("error");
+            }
+
+//            try{
+//            for(var i=0;i<result["list"].length;i++){
+//                var li_new = document.createElement("li");
+//                $(".feeds")[0].appendChild(li_new);
+//                var div_icon = document.createElement("div");
+//                li_new.appendChild(div_icon);
+//                var img_icon = document.createElement("img");
+//                div_icon.appendChild(img_icon);
+//                img_icon.setAttribute("src",result["list"][i]["picture"]);
+//
+//                var div_des = document.createElement("div");
+//                li_new.appendChild(div_des);
+//                div_des.innerHTML = result["list"][i]["name"];
+//            }
+//            }catch(e){
+//             alert("error");
+//            }
+//			var li_new = $(".feed")[0].createElement("li");
+//			div class="feedsIcon"><img src={{item.picture}} /> </div>
+//			var div_icon = li_new.createElement("div");
+//			var img_icon = div_icon.createElement("img");
+//			img_icon.setAttribute("src",result);
+//			var para = document.createElement("p");
+//            var node = document.createTextNode("这是新段落。");
+//            para.appendChild(node);
+			$("#location").innerHTML = result["location"];
+			$("#count").innerHTML = result["count"];
+			$("#friends").innerHTML = result["friends"];
+
+//			for(var i=0;i<result["list"].length;i++){
+//                var li_new = document.createElement("li");
+//                $(".feeds")[0].appendChild(li_new);
+//                var div_icon = document.createElement("div");
+//                li_new.appendChild(div_icon);
+//                var img_icon = document.createElement("img");
+//                div_icon.appendChild(img_icon);
+//                img_icon.setAttribute("src",result["list"][i]["picture"]);
+//
+//                var div_des = document.createElement("div");
+//                li_new.appendChild(div_des);
+//                div_des.innerHTML = result["list"][i]["name"];
+//		}
+	}
+	xmlhttp.open("GET","/data",true);
+	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xmlhttp.send();
+	}
+	}
+	sendAjax();
+	setInterval(function(){
+	sendAjax();
+	},10000);
+
+})s

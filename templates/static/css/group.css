@@ -1,0 +1,15 @@
+.label-name {
+    height: 20px;
+}
+
+.li-zan:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+}
+
+.li-zan {
+    zoom: 1
+}

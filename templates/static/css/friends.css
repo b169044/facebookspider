@@ -1,0 +1,134 @@
+
+.topbox {
+    height: 500px;
+    background-color: #313131;
+}
+
+.section-content {
+    border-bottom: 2px solid darkgray;
+
+    padding: 200px 0 !important;
+    position: relative;
+}
+
+.nav-height {
+    position: relative;
+    height: 50px;
+}
+
+.nav-wrap {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+
+.nav-wrap.navFix {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #e3e3e3 \9;
+    z-index: 1;
+}
+
+.nav-wrap ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 1200px;
+    display: block;
+    border-bottom: 2px solid #eee;
+}
+
+.nav-wrap.navFix ul {
+    border-bottom: 0;
+}
+
+.nav-wrap li {
+    display: inline-block;
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+.nav-wrap li a {
+    display: block;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-wrap li a:hover {
+    color: #4680d1;
+}
+
+.nav-wrap li a.active {
+    border-bottom: 5px solid #4680d1;
+    color: #4680d1;
+}
+
+.nav-mobile {
+    display: none;
+    font-weight: bold;
+    width: 100%;
+}
+
+.click-me {
+    width: 150px;
+    height: 30px;
+    background: #4680d1;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+
+.click-me a {
+    display: block;
+    color: white;
+}
+
+.ul_friendsShow:after, .ul_friendsShow li:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.h1_sec{
+    position: absolute;
+    top: 103px;
+    left: 50px;
+    font-size: 50px;
+    font-family: "微软雅黑", fantasy;
+}
+
+.btn_friends{
+    margin: 30px 20px 0 20px;
+    /* float: left; */
+    /* font-size: 41px; */
+}
+
+.btn_friend{
+    font-size: 30px;
+    height: 75px;
+}
+
+#btn_addToList{
+    display: block;
+}
+
+.pagination>li{
+    float: left !important;
+}
+
+.well{
+    /*min-height: 40px !important;*/
+    height: 30px;
+}
+
+.friendsNav{
+    margin-bottom: 100px;
+}

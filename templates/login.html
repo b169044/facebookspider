@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <meta name="keywords" content=" Templates, a Ipad 404 Templates, Flat Responsive Templates"/>
+    <link href="static/css/login.css" rel='stylesheet' type='text/css'/>
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<script>$(document).ready(function (c) {
+    $('.close').on('click', function (c) {
+        $('.login-form').fadeOut('slow', function (c) {
+            $('.login-form').remove();
+        });
+    });
+//	$("#login").on('click',function(){
+//		if($("input[name='user']").val() == ''||$("input[name='password']").val() == '')
+//		alert("123");
+//	})
+
+
+});
+</script>
+<!--SIGN UP-->
+<h1 class="h1-title-CN">社交网络展示平台</h1>
+<h1 class="h1-title">SOCIAL NETWORK DISPLAY PLATFORM</h1>
+<div class="login-form">
+    <div class="close"></div>
+    <div class="head-info">
+        <label class="lbl-1"> </label>
+        <label class="lbl-2"> </label>
+        <label class="lbl-3"> </label>
+    </div>
+    <div class="clear"></div>
+    <div class="avtar">
+        <img src="static/images/1112.jpg"/>
+    </div>
+    <script>
+        function checkForm() {
+            if ($("input[name='user']").val() == "") {
+//			$("input[name='user']").val("123");
+                $("input[name='user']").attr('placeholder', "用户名不能为空");
+                $("input[name='user']").focus();
+                return false;
+            }
+            if ($("input[name='password']").val() == "") {
+                $("input[name='password']").attr('placeholder', "密码不能为空");
+                $("input[name='password']").focus();
+                return false;
+            }
+
+
+            return true;
+        }
+    </script>
+    <form action="/login" onsubmit="return checkForm();" method="post">
+        {% csrf_token %}
+        <div class="login_input">
+            <img id="userIcon1" src="static/images/boy.png">
+            <input name="user" type="text" class="text" value="" placeholder="请输入用户名" onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = '';}">
+        </div>
+        <div class="key">
+            <img id="userIcon2" src="static/images/abcd.png">
+            <input name="password" type="password" value="" placeholder="请输入密码" onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = '';}">
+            <p id="errorAlert">用户名或密码错误！</p>
+        </div>
+        <div class="signin">
+            <input type="submit" value="Login" id="login">
+        </div>
+    </form>
+
+</div>
+<div class="copy-rights">
+    <p><a>本网站仅为开发测试版，请勿以商业用途使用</a></p>
+</div>
+</body>
+<script>
+    console.log('{{message}}');
+    if ('{{message}}' == '登录失败') {
+        $("#errorAlert").css('display','block');
+    }
+</script>
+</html>

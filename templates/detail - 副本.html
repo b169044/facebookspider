@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spider Show For Facebook</title>
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-metro.css">
+    <link type="text/css" rel="stylesheet" href="static/css/default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/buttons.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/css/detail.css">
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/JSON.js"></script>
+    <script src="static/js/detail.js"></script>
+</head>
+<body>
+
+<!--header-->
+
+<div class="header navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <img id="userIcon" src="static/images/boy.png">
+            <span id="userName">{{name|safe}}</span>
+            <script>
+                var userName0 = '{{name|safe}}';
+                var url0  ='{{url}}';
+            </script>
+            <a href="/login" id="logout">登出</a>
+            <a id="a_title" class="brand">
+                <img src="static/images/logo2.png">
+                <span>SOCIAL NETWORK DISPLAY PLATFORM</span>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<!--container-->
+
+<div class="page-container">
+    <!--container-sidebar-->
+    <div class="page-sidebar nav-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li>
+                <a href="/index?type={{message}}&name={{name}}">
+                    <i class="icon-home"></i>
+                    <span class="title">展示</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+            <li>
+                <a href="/chart?type={{message}}&name={{name}}">
+                    <i class="icon-table"></i>
+                    <span class="title">分析</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+
+            <li class="start active">
+                <a href="/search?type={{message}}&name={{name}}">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <span class="title">社交查询</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!--container-content-->
+    <div class="page-content" style="min-height: 1100px !important;">
+        <div class="container-fluid">
+
+            <!--container-content-title-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3 class="page-title">Social Network Display Platform
+                        <small>Mining information of friends</small>
+                    </h3>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--container-content-dashboard-->
+            <div id="dashboard">
+
+                <div class="row-fluid">
+                    <div class="contentInfo">
+                        <div class="span11 headInfo">
+                            <div class="headPhoto">
+                                <img src="static/images/photo.jpg">
+                            </div>
+                            <h1 class="headName">周宇航Gillian</h1>
+                        </div>
+                        <div class="span5 leftInfo">
+
+
+                            <div class="leftIntro">
+                                <div class="introDes">
+                                    <span><i class="fa fa-user-circle fa-1x"></i> 简介</span>
+                                    <p class="introDetail">我叫Jack Chen,welcome to 贪婪蓝月!</p>
+                                </div>
+                                <div class="introHeadline">
+                                    学校:西安交通大学<br/>
+                                    地区:陕西省西安市<br/>
+                                    曾在：Xian JiaoTong University Computer 专业
+                                </div>
+                                <div class="introPos">
+                                    <i class="fa fa-map-marker fa-2x"></i>
+                                    <span class="posUrl">222.22.65.12:8772/Map/index.html</span>
+                                </div>
+                            </div>
+
+                            <div class="leftFriends">
+                                <div class="friendsDes">
+                                    <span><i class="fa fa-users fa-1x"></i> 我的好友  <i class="fa fa-plus fa-1x"></i></span>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="span6 rightInfo">
+
+                            <div class="rightPost">
+                                <div class="postDes">
+                                    <img src="static/images/幽灵公主.PNG">
+                                    <div class="postInfo">
+                                        <span class="postName">周宇航</span>
+                                        <span class="postTime">2017年9月15日</span>
+                                        <i class="fa fa-globe fa-2x"></i>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="postText">
+                                    <p>今天我就是心情啊，您配呢。真是精彩角羚！！！！<br/>
+                                     I will Show you something.今天我就是心情啊，您配呢。真是精彩角羚！！！！
+                                     I will Show you something.今天我就是心情啊，您配呢。真是精彩角羚！！！！
+                                     I will Show you something.
+                                    </p>
+                                </div>
+
+                                <div class="postPic">
+                                    <ul class="postPicUl">
+                                        <li>
+                                            <img src="static/images/结束.png">
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="rightPost">
+                                <div class="postDes">
+                                    <img src="static/images/幽灵公主.PNG">
+                                    <div class="postInfo">
+                                        <span class="postName">周宇航</span>
+                                        <span class="postTime">2017年9月15日</span>
+                                        <i class="fa fa-globe fa-2x"></i>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="postText">
+                                    <p>今天我就是心情啊，您配呢。真是精彩角羚！！！！<br/>
+                                     I will Show you something.今天我就是心情啊，您配呢。真是精彩角羚！！！！
+                                     I will Show you something.今天我就是心情啊，您配呢。真是精彩角羚！！！！
+                                     I will Show you something.
+                                    </p>
+                                </div>
+
+                                <div class="postPic">
+                                    <ul class="postPicUl">
+                                        <li>
+                                            <img src="static/images/结束.png">
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

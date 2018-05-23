@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOCIAL NETWORK DISPLAY PLATFORM</title>
+    <link type="text/css" rel="stylesheet" href="static/css/menu_sideslide.css">
+    <link type="text/css" rel="stylesheet" href="static/css/allf.css">
+
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <link type="text/css" rel="stylesheet" href="static/css/jquery.bs_pagination.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/check.css">
+    <link type="text/css" rel="stylesheet" href="static/css/buttons.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/ns-default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/ns-style-growl.css">
+    <!--<link type="text/css" rel="stylesheet" href="static/css/style-metro.css">-->
+    <link type="text/css" rel="stylesheet" href="static/css/default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/jquery.datetimepicker.css">
+    <link type="text/css" rel="stylesheet" href="static/css/listStyle.css">
+    <link rel="stylesheet" href="static/css/index.css" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    //弹出层
+    <script src="static/js/option.js"></script>
+
+    <!--分页-->
+    <script type="text/javascript" src="static/js/jquery.bs_pagination.min.js"></script>
+    <script type="text/javascript" src="static/js/en.min.js"></script>
+
+    <script src="static/js/JSON.js"></script>
+    <script src="static/js/modernizr.custom.js"></script>
+
+    <script src="static/js/checkbox.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/common.js"></script>
+</head>
+<body>
+
+<!--header-->
+<div class="menu-wrap">
+
+    <nav class="menu">
+
+        <div class="icon-list">
+            <ul class="tipUl" id="tipUl">
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <button class="close-button" id="close-button">Close Menu</button>
+
+</div>
+
+<button class="menu-button" id="open-button">Open Menu</button>
+
+
+<div class="header navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <img id="userIcon" src="static/images/boy.png">
+            <span id="userName">{{name|safe}}</span>
+            <script>
+                var userName0 = '{{name|safe}}';
+                var type0 ='{{message|safe}}';
+            </script>
+            <a href="/login" id="logout">登出</a>
+            <a id="a_title" class="brand">
+                <img src="static/images/logo2.png">
+                <span>SOCIAL NETWORK DISPLAY PLATFORM</span>
+            </a>
+            <div id="somedialog" class="dialog">
+
+                <div class="dialog__overlay"></div>
+
+                <div class="dialog__content" id="dialog__content">
+                    <!--<div><button class="action" data-dialog-close>Close</button></div>-->
+                    <i class="fa fa-close action" data-dialog-close aria-hidden="true"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="help-tip" id="listTip">
+        <div id="tipContent">
+            <i class="fa fa-close" id="list_close" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<!--container-->
+
+<div class="page-container">
+    <!--container-sidebar-->
+    <div class="page-sidebar nav-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li>
+                <!--<a href="/index?type={{message}}&name={{name}}">-->
+                <form action="/index" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="icon-home"></i>
+                    <input type="submit" value="展示" class="input-submit">
+                </form>
+            </li>
+            <li class="start active">
+                <form action="/search" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="submit" value="查询" class="input-submit active">
+                </form>
+            </li>
+
+            <li>
+                <form action="/chart" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="icon-table"></i>
+                    <input type="submit" value="分析" class="input-submit">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <!--container-content-->
+    <div class="page-content" style="min-height: 1500px !important;">
+        <div class="container-fluid">
+
+            <!--container-content-title-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3 class="page-title">Social Network Display Platform
+                        <small>Mining information of friends</small>
+                    </h3>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--container-content-dashboard-->
+            <div id="dashboard">
+
+                <div class="row-fluid" id="motherRow">
+                    <div class="span12" id="span12_main">
+
+                        <div class="mainContent">
+                            <div class="logoIcon">
+                                <a class="logoIcon-all" href="#">
+        <span class="logoIcon-button">
+        </span>
+                                </a>
+                            </div>
+
+                            <div class="searchBar">
+                                <div class="searchTitle" id="searchTitle">
+                                    <ul>
+                                        <li class="select">
+                                            <a title="find people">在线查询</a>
+                                        </li>
+                                        <li>
+                                            <a title="social mining">本地查询</a>
+                                        </li>
+                                        <li>
+                                            <a title="social group">关键字查询</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="scrollBar" id="scrollBar">
+                                </div>
+
+                                <div class="searchContent" id="searchContent">
+                                    <div class="sBar" id="sBar" style="display: block;">
+                                        <!--<form>-->
+                                        <input id="input1" type="text" name="q" placeholder="Search Name  e.g.Jon Snow"
+                                               class="frontBar personName">
+                                        <input id="input2" type="text" name="q"
+                                               placeholder="Search Name  e.g.Jon Snow"
+                                               class="frontBar">
+                                        <input id="input31" type="text" name="q"
+                                               placeholder="Search by keywords  e.g.apple;banana;pine" id="reve1"
+                                               class="frontBar reverseAddr">
+
+                                        <div class=" switch" id="switch">
+                                            <label class="cb-enable selected"><span>交集</span></label>
+                                            <label class="cb-disable "><span>并集</span></label>
+                                            <input type="checkbox" id="checkbox" value="1" class="checkbox" name="field2" style="display:none"/>
+                                        </div>
+
+
+                                        <!--<input id="input32" type="text" name="q" placeholder="e.g.  apple;banana;pie"-->
+                                               <!--id="reve2" class="frontBar reverseAddr2">-->
+                                        <button class="searchButton" id="searchButton"></button>
+                                        <!--</form>-->
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="searchDes" id="searchDes">
+                                <div class="sDes" style="display: block;">
+                                    <h1>在线寻找用户信息</h1>
+                                    <h2>Find Contact Information on yourself or anyone else online.</h2>
+                                </div>
+                                <div class="sDes" style="display: none;">
+                                    <h1>本地查找用户信息</h1>
+                                    <h2>Find Contact Information on yourself or anyone else offline.</h2>
+                                </div>
+                                <div class="sDes" style="display: none;">
+                                    <h1>使用关键字搜索用户信息</h1>
+                                    <h2>Allows you to get social information and membership using keywords.</h2>
+                                </div>
+
+                                <div class="clear"></div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="static/js/notificationFx.js"></script>
+<!--侧边栏-->
+<script src="static/js/classie.js"></script>
+<script src="static/js/main.js"></script>
+</html>

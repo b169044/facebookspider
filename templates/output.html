@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输出文件请右键目标另存为</title>
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="static/js/output.js"></script>
+    <style>
+        #body_output{
+            background-color: white !important;
+        }
+    </style>
+</head>
+<body id="body_output">
+<!--<button id="btn2">btn2</button>-->
+{% if list %}
+<ul class="feeds" id="feeds">
+{% for item in list %}
+<li>
+<div class="feedsIcon" style="width: 40px"><img src={{item.picture}} style="width:36px " /> </div>
+<div class="feedsDes">{{ item.name }}</div>
+</li>
+{% endfor %}
+
+    <div class="clear"></div>
+</ul>
+
+<!--{% else%}-->
+<!--<ul class="feeds">-->
+<!--<li>-->
+<!--<div class="feedsDes">{{ error }}</div>-->
+<!--</li>-->
+
+<!--</ul>-->
+{% endif %}
+</body>
+</html>

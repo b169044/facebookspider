@@ -1,0 +1,211 @@
+ul{
+    list-style: none;
+}
+
+.edge {
+    border-bottom: 3px solid #aaa;
+    border-right: 3px solid #aaa;
+    margin: 28px;
+    float: left;
+    background: #aaa;
+    -webkit-border-radius: 7px;
+    width: 380px;
+    height: 110px;
+    -moz-border-radius: 7px;
+    /*display: none;*/
+}
+
+.desktop {
+    padding: 5px 5px 30px 5px;
+    background: #222;
+    margin-top: -5px;
+    margin-left: -5px;
+    color: #fff;
+    height: 69%;
+    width: 97.5%;
+    border: 1px solid #222;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    position:  relative;
+}
+
+.desktop a {
+    text-decoration: none;
+    float: left;
+}
+
+.headline a {
+    text-decoration: none !important;
+    /*float: left;*/
+    color: lightyellow;
+}
+
+.desktop img {
+    /* border: none; */
+    width: 100px;
+    height: 100px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.desktops h2 {
+    float: left;
+    margin-left: 5px;
+    width: 100px;
+}
+
+.headline{
+    float: left;
+    /* margin-left: 5px; */
+    width: 180px;
+    margin: 0px 6px;
+    font-size: 14px;
+    font-family: "Calibri Light";
+    height:  100px;
+    overflow:  hidden;
+    line-height:  17px;
+}
+
+.headline:hover{
+    color: lightyellow;
+}
+
+.creator {
+    margin: 3px 5px 0 0;
+    /* float: right; */
+    position:  absolute;
+    bottom: 5px;
+    font-size: 22px;
+    right: 5px;
+    display:  block;
+    background-color: #222;
+}
+
+.creator a {
+    font-weight: bold;
+    color: gold;
+}
+
+.radioPos {
+    width: 50px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+.radioPos:hover{
+    cursor: pointer;
+}
+
+.regular-radio {
+    display: none;
+}
+
+.regular-radio + label {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.regular-radio:checked + label:after {
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    position: absolute;
+    top: 3px;
+    background: gold;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+    text-shadow: 0px;
+    left: 3px;
+    font-size: 32px;
+}
+
+.regular-radio:checked + label {
+    background-color: #e9ecee;
+    color: #99a1a7;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.regular-radio + label:active, .regular-radio:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.big-radio + label {
+    padding: 16px;
+}
+
+.big-radio:checked + label:after {
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+}
+
+/*group和zan的新标签样式*/
+.label-pic {
+    width: 100px;
+    height: 100px;
+    /* display: inline-block; */
+    float: left;
+}
+
+.label-content{
+    width: 220px;
+    /* display: inline-block; */
+    float: left;
+    margin: 6px 0px 7px 20px;
+    overflow: hidden;
+}
+
+.label-name{
+    font-size: 22px;
+    background-color: #222;
+    color: gold;
+    font-weight: bold;
+    height: 21px;
+    overflow:  hidden;
+}
+.label-type{
+    color: lightgrey;
+    font-family: "微软雅黑 Light";
+}
+
+.label-btn-zan{
+    background: #ff03b5;
+    /* top: -7px; */
+    margin-top: -6px;
+    margin-left: 0px;
+}
+
+.label-group-count{
+    color: lightgrey;
+    margin-bottom: 2px;
+    font-family: "微软雅黑 Light";
+    height: 1.5em;
+    overflow:  hidden;
+}
+
+.label-group-des{
+    color: lightsteelblue;
+    font-family: "微软雅黑 Light";
+    overflow: hidden;
+    height: 2.7em;
+}
+
+.label-pic-part img{
+    width: 46px;
+    height: 46px;
+    float: left;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.label-pic-part{
+}

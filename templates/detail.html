@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOCIAL NETWORK DISPLAY PLATFORM</title>
+    <link type="text/css" rel="stylesheet" href="static/css/menu_sideslide.css">
+    <link type="text/css" rel="stylesheet" href="static/css/allf.css">
+
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-metro.css">
+    <link type="text/css" rel="stylesheet" href="static/css/default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/buttons.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/css/detail.css">
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/option.js"></script>
+
+    <script src="static/js/JSON.js"></script>
+    <script src="static/js/detail.js"></script>
+    <script src="static/js/common.js"></script>
+</head>
+<body>
+
+<!--header-->
+<div class="menu-wrap">
+
+    <nav class="menu">
+
+        <div class="icon-list">
+            <ul class="tipUl" id="tipUl">
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <button class="close-button" id="close-button">Close Menu</button>
+
+</div>
+
+
+
+<button class="menu-button" id="open-button">Open Menu</button>
+
+
+<div class="header navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <img id="userIcon" src="static/images/boy.png">
+            <span id="userName"></span>
+            <script type="text/javascript">
+//                var userName0 = '{{name|safe}}';
+//                var url1  ='{{url|safe}}';
+//                var name1 ='{{name1}}';
+//                var pic1 ='{{picture |safe}}';
+//                var type0 = '{{type|safe}}';
+                var result_all ={{result|safe}};
+//                console.log(tweet);
+//                var friendList= encodeURIComponent('{{friendsList|safe}}');
+//                console.log(decodeURIComponent(friendList));
+            </script>
+            <a href="/login" id="logout">登出</a>
+            <a id="a_title" class="brand">
+                <img src="static/images/logo2.png">
+                <span>SOCIAL NETWORK DISPLAY PLATFORM</span>
+            </a>
+            <div id="somedialog" class="dialog">
+
+                <div class="dialog__overlay"></div>
+
+                <div class="dialog__content" id="dialog__content">
+                    <!--<div><button class="action" data-dialog-close>Close</button></div>-->
+                    <i class="fa fa-close action" data-dialog-close aria-hidden="true"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="help-tip" id="listTip">
+        <div id="tipContent">
+            <i class="fa fa-close" id="list_close" aria-hidden="true"></i>
+            <!--<ul class="tipUl" id="tipUl">-->
+            <!--</ul>-->
+        </div>
+    </div>
+</div>
+
+<!--container-->
+
+<div class="page-container">
+    <!--container-sidebar-->
+    <div class="page-sidebar nav-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="start active">
+                <!--<a href="/index?type={{message}}&name={{name}}">-->
+                <form action="/index" method="post">
+                    <input type="hidden" name="type" id="input-index-type">
+                    <input type="hidden" name="name" id="input-index-name">
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="icon-home"></i>
+                    <input type="submit" value="展示" class="input-submit">
+                </form>
+            </li>
+            <li>
+                <form action="/search" method="post">
+                    <input type="hidden" name="type" id="input-search-type">
+                    <input type="hidden" name="name" id="input-search-name">
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="submit" value="查询" class="input-submit active">
+                </form>
+            </li>
+
+            <li>
+                <form action="/chart" method="post">
+                    <input type="hidden" name="type" id="input-chart-type">
+                    <input type="hidden" name="name" id="input-chart-name">
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="icon-table"></i>
+                    <input type="submit" value="分析" class="input-submit">
+                </form>
+            </li>
+
+        </ul>
+    </div>
+    <!--container-content-->
+    <div class="page-content" style="min-height: 1100px !important;">
+        <div class="container-fluid">
+
+            <!--container-content-title-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3 class="page-title">Social Network Display Platform
+                        <small>Mining information of friends</small>
+                    </h3>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--container-content-dashboard-->
+            <div id="dashboard">
+
+                <div class="row-fluid">
+                    <div class="contentInfo">
+                        <div class="span11 headInfo">
+                            <div class="headPhoto">
+                                <img id="head-img">
+                            </div>
+                            <h1 class="headName"></h1>
+                        </div>
+                        <div class="span5 leftInfo">
+
+
+                            <div class="left leftIntro">
+                                <div class="introDes">
+                                    <span><i class="fa fa-user-circle fa-1x"></i> 简介</span>
+
+                                </div>
+                                <div class="introHeadline">
+                                    {{ info|safe }}
+
+                                </div>
+
+                            </div>
+
+                            <div class="left leftFriends">
+                                <div class="left-des friendsDes">
+                                    <span><i class="fa fa-users friend fa-1x"></i> <span class="span-count span-friends-count"> 我的好友 共{{ num }}位</span> <i class="fa fa-plus fa-1x" id="button_more"></i></span>
+                                    <ul class="ul_friends">
+                                        {% for i in friendsList %}
+                                        <li>
+                                            <img class="img_friends" src={{ i }} >
+
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="left leftGroup">
+                                <div class="left-des groupDes">
+                                    <span><i class="fa fa-users fa-1x"></i><span class="span-count span-groups-count"> 我的群组 共{{ num }}位</span><i class="fa fa-plus fa-1x" id="button_more_2"></i></span>
+                                </div>
+                            </div>
+
+
+                            <div class="left leftZan">
+                                <div class="left-des zanDes">
+                                    <span><i class="fa fa-thumbs-o-up fa-1x"></i><span class="span-count span-likes-count"> 我赞过的用户 共{{ num }}位</span><i class="fa fa-plus fa-1x" id="button_more_3"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span6 rightInfo">
+                            {% for item in tweet %}
+                            <div class="rightPost">
+                                <div class="postDes">
+                                    <img src={{ picture }}>
+                                    <div class="postInfo">
+                                        <span class="postName">{{ item.location }}</span>
+                                        <span class="postTime">{{ item.time }}</span>
+                                        <i class="fa fa-globe fa-2x"></i>
+                                        <br/>
+
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="postText">
+
+                                    <p>{{ item.text }}<br/>
+
+                                    </p>
+                                    {{ item.arialabel }}
+                                    {{ item.video }}
+                                </div>
+
+
+                                {% for i in item.picture %}
+                                <div class="postPic">
+                                    <ul class="postPicUl">
+                                        <li>
+                                            <img src={{ i}}>
+                                        </li>
+                                    </ul>
+                                </div>
+                                 {% endfor %}
+
+
+                            </div>
+                            {% endfor %}
+
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--侧边栏-->
+<script src="static/js/classie.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+
+</html>

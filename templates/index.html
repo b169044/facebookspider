@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOCIAL NETWORK DISPLAY PLATFORM</title>
+    <link type="text/css" rel="stylesheet" href="static/css/menu_sideslide.css">
+    <link type="text/css" rel="stylesheet" href="static/css/allf.css">
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/buttons.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-metro.css">
+    <!--添加抓取列表CSS-->
+    <link type="text/css" rel="stylesheet" href="static/css/ns-default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/ns-style-growl.css">
+
+    <link type="text/css" rel="stylesheet" href="static/css/default.css">
+    <link type="text/css" rel="stylesheet" href="static/css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="static/css/jquery.datetimepicker.css">
+    <link type="text/css" rel="stylesheet" href="static/css/jquery.bs_pagination.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="static/js/option.js"></script>
+    <script src="static/js/JSON.js"></script>
+    <script src="static/js/md5.js"></script>
+    <script src="static/js/jquery.datetimepicker.full.js"></script>
+    <script src="static/js/function.js"></script>
+    <script type="text/javascript" src="static/js/jquery.bs_pagination.min.js"></script>
+    <script type="text/javascript" src="static/js/en.min.js"></script>
+    <script type="text/javascript" src="static/js/common.js"></script>
+    <!--加入爬虫队列提示-->
+    <script src="static/js/modernizr.custom.js"></script>
+    <!--汉语转换为首字母-->
+    <script src="static/js/py.js"></script>
+
+</head>
+<body>
+<!--header-->
+<div class="menu-wrap">
+
+    <nav class="menu">
+
+        <div class="icon-list">
+            <ul class="tipUl" id="tipUl">
+            </ul>
+        </div>
+
+    </nav>
+
+    <button class="close-button" id="close-button">Close Menu</button>
+
+</div>
+
+
+<button class="menu-button" id="open-button">Open Menu</button>
+<div class="header navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <img id="userIcon" src="static/images/boy.png">
+            <span id="userName">{{name|safe}}</span>
+            <script>
+                var userName0 = '{{name|safe}}';
+                var type0 = '{{message|safe}}';
+            </script>
+            <a href="/login" id="logout">登出</a>
+            <a id="a_title" class="brand">
+                <img src="static/images/logo2.png">
+                <span>SOCIAL NETWORK DISPLAY PLATFORM</span>
+            </a>
+            <div id="somedialog" class="dialog">
+
+                <div class="dialog__overlay"></div>
+
+                <div class="dialog__content" id="dialog__content">
+                    <!--<div><button class="action" data-dialog-close>Close</button></div>-->
+                    <i class="fa fa-close action" data-dialog-close aria-hidden="true"></i>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="help-tip" id="listTip">
+        <div id="tipContent">
+            <i class="fa fa-close" id="list_close" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+
+<!--container-->
+{% csrf_token %}
+
+<div class="page-container">
+    <!--container-sidebar-->
+    <div class="page-sidebar nav-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="start active">
+                <form action="/index" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <i class="icon-home"></i>
+                    <input type="submit" value="展示" class="input-submit active">
+                </form>
+            </li>
+            <li>
+                <form action="/search" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="submit" value="查询" class="input-submit">
+                </form>
+            </li>
+
+            <li>
+                <form action="/chart" method="post">
+                    <input type="hidden" name="type" value='{{message|safe}}'>
+                    <input type="hidden" name="name" value='{{name|safe}}'>
+                    <!--<a id="a-zhanshi" type="submit">-->
+                    <i class="icon-table"></i>
+                    <input type="submit" value="分析" class="input-submit">
+                </form>
+            </li>
+
+
+        </ul>
+    </div>
+    <!--login-->
+    <script>
+
+        if ('{{message|safe}}' == 'admin') {
+        } else {
+            $(".page-sidebar-menu a")[1].setAttribute("href", 'javascript:void(0)');
+            $(".page-sidebar-menu li")[1].setAttribute("disabled", true);
+            $(".page-sidebar-menu li")[1].addEventListener('click', function () {
+                alert("对不起，该功能暂未开放!");
+            })
+        }
+    </script>
+
+
+    <!--container-content-->
+    <div class="page-content" style="min-height: 1300px !important;">
+        <div class="container-fluid">
+
+            <!--container-content-title-->
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3 class="page-title">Social Network Display Platform
+                        <small>Mining information of friends</small>
+                    </h3>
+                </div>
+            </div>
+
+            <!--container-content-dashboard-->
+            <div id="dashboard">
+
+                <div class="clearfix"></div>
+
+                <div class="row-fluid">
+                    <div class="span6 listShow">
+                        <div class="portlet paddingless">
+                            <div class="portlet-title line">
+                                <div class="caption"><i class="icon-bell"></i>信息展示</div>
+                            </div>
+                            <div class="portlet-body">
+
+                                <!--BEGIN TABS-->
+
+                                <div class="tabbable tabbable-custom">
+
+                                    <ul class="nav nav-tabs">
+
+                                        <li class="active"><a data-toggle="tab">正在抓取</a></li>
+
+                                        <li><a data-toggle="tab">历史数据</a></li>
+
+
+                                    </ul>
+
+                                    <div class="tab-content">
+
+                                        <div class="tab-pane active" id="tab_1_1">
+
+                                            <div class="scroller" data-height="290px" data-always-visible="1"
+                                                 data-rail-visible="0">
+                                                <h2 id="message"></h2>
+
+                                                <ul class="feeds" id="feeds">
+                                                </ul>
+                                                <script>
+
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="span4">
+                        <div class="row-fluid">
+
+
+                            <div class="span12 responsive" style="margin-left:2.22%" data-tablet="span6"
+                                 data-desktop="span3">
+
+                                <div class="wrap">
+
+                                    <h2>国家城市选择</h2>
+                                    <!--<form action="/location" method="get">-->
+                                    <fieldset id="global_location">
+
+                                        <legend>全球主要国家城市联动</legend>
+
+                                        <p id="p_sel">国家城市的选择方式:
+
+                                        <ul class="ul-sel-type">
+                                            <li id="li-sel-country" class="li-sel-type">
+                                                按国家列表
+                                            </li>
+                                            <li id="li-sel-history" class="li-sel-type">
+                                                按历史纪录
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <div id="div-select-history">
+                                            <select class="select-history" id="select-history-id">
+                                                <option selected="selected" value="请选择">请选择</option>
+
+                                            </select>
+                                            <button id="btn_showInfo_history"
+                                                    class="button button-primary button-small">show
+                                            </button>
+                                        </div>
+
+
+                                        <div id="div-select-country">
+                                            <select title="点击可以选择国家" id="select_def" name="country" class="country"
+                                                    disabled="disabled">
+                                                <option selected="selected" value="新加坡">新加坡</option>
+                                            </select>
+                                            <input id="input_sel" type="text" placeholder="请输入国家名称并按enter">
+                                            <img src="static/images/search.png" id="img_search" title="返回搜索？">
+                                            <div id="div-candidate-list">
+                                                <ul class="ul-candidate-list">
+                                                    <!--<li class="li-candidate">-->
+                                                        <!--<div class="div-candidate-name">aab</div>-->
+                                                        <!--<div class="div-candidate-type">A</div>-->
+                                                        <!--<div class="clear"></div>-->
+                                                    <!--</li>-->
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </div>
+
+                                            <select id="select_def2" name="state" class="state"
+                                                    disabled="disabled"></select>
+
+                                            <select name="city" class="city" disabled="disabled"></select>
+                                            <button id="btn_showInfo" class="button button-primary button-small">show
+                                            </button>
+
+                                        </div>
+
+                                        <!--<button id="btn_test">test</button>-->
+
+
+                                        <!--<select class="region" disabled="disabled"></select>-->
+
+                                        </p>
+
+
+                                    </fieldset>
+                                    <!--</form>-->
+                                </div>
+
+                            </div>
+                            <div class="span12 responsive" data-tablet="span6" data-desktop="span3">
+                                <div class="dashboard-stat blue">
+
+                                    <div class="visual">
+
+                                        <i class="icon-comments"></i>
+
+                                    </div>
+
+                                    <div class="details">
+
+                                        <div class="number" id="location">
+                                            请选择
+                                        </div>
+
+                                        <div class="desc">
+                                            Location
+                                        </div>
+
+                                    </div>
+
+                                    <a class="more" href="#">
+                                        <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="span12 responsive" data-tablet="span6" data-desktop="span3">
+
+                                <div class="dashboard-stat green">
+
+                                    <div class="visual">
+
+                                        <i class="icon-shopping-cart"></i>
+
+                                    </div>
+
+                                    <div class="details">
+
+                                        <div class="number date" id="date"></div>
+
+                                        <div class="desc">Time</div>
+
+                                    </div>
+
+                                    <a class="more" href="#">
+                                        <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="span12 responsive" data-tablet="span6  fix-offset" data-desktop="span3">
+
+                                <div class="dashboard-stat purple">
+
+                                    <div class="visual">
+
+                                        <i class="icon-globe"></i>
+
+                                    </div>
+
+                                    <div class="details">
+
+                                        <div class="number" id="counts">0</div>
+
+                                        <div class="desc">主页数</div>
+
+                                    </div>
+
+                                    <a class="more" href="#">
+                                        <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="span12 responsive" data-tablet="span6" data-desktop="span3">
+
+                                <div class="dashboard-stat yellow">
+
+                                    <div class="visual">
+
+                                        <i class="icon-bar-chart"></i>
+
+                                    </div>
+
+                                    <div class="details">
+
+                                        <div class="number" id="friends">0</div>
+
+                                        <div class="desc">好友数</div>
+
+                                    </div>
+
+                                    <a class="more" href="#">
+
+                                        <i class="m-icon-swapright m-icon-white"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="static/js/ajax.js"></script>
+<script src="static/js/jquery.cxselect.min.js"></script>
+<script src="static/js/jquery.cxselect.js"></script>
+
+<script src="static/js/notificationFx.js"></script>
+
+<!--侧边栏-->
+<script src="static/js/classie.js"></script>
+<script src="static/js/main.js"></script>
+</html>
